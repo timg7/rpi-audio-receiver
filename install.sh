@@ -13,7 +13,7 @@ cleanup() {
 }
 
 verify_os() {
-    MSG="Unsupported OS: Raspberry Pi OS 12 (bookworm) is required."
+    MSG="Unsupported OS: Raspberry Pi OS 13 (trixie) is required."
 
     if [ ! -f /etc/os-release ]; then
         echo $MSG
@@ -22,7 +22,7 @@ verify_os() {
 
     . /etc/os-release
 
-    if [[ ("$ID" != "debian" && "$ID" != "raspbian") || "$VERSION_ID" != "12" ]]; then
+    if [[ ("$ID" != "debian" && "$ID" != "raspbian") || "$VERSION_ID" != "13" ]]; then
         echo $MSG
         exit 1
     fi
@@ -112,7 +112,7 @@ install_shairport() {
     if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then return; fi
 
     sudo apt update
-    sudo apt install -y --no-install-recommends wget unzip autoconf automake build-essential libtool git autoconf automake libpopt-dev libconfig-dev libasound2-dev avahi-daemon libavahi-client-dev libssl-dev libsoxr-dev libplist-dev libsodium-dev libavutil-dev libavcodec-dev libavformat-dev uuid-dev libgcrypt20-dev xxd
+    sudo apt install -y --no-install-recommends wget unzip autoconf automake build-essential libtool git autoconf automake libpopt-dev libconfig-dev libasound2-dev avahi-daemon libavahi-client-dev libssl-dev libsoxr-dev libplist-dev libsodium-dev libavutil-dev libavcodec-dev libavformat-dev uuid-dev libgcrypt20-dev xxd systemd-dev
 
     if [[ -z "$TMP_DIR" ]]; then
         TMP_DIR=$(mktemp -d)

@@ -9,7 +9,7 @@ Devices like phones, tablets and computers can play audio via this receiver.
 ## Requirements
 
 - A USB Bluetooth dongle (the internal Raspberry Pi Bluetooth chipset turned out as not suited for audio playback and causes all kinds of strange connectivity problems)
-- Raspberry Pi OS 12 Lite
+- Raspberry Pi OS 13 Lite
 - Internal audio, HDMI, USB or I2S Audio adapter (tested with [Adafruit USB Audio Adapter](https://www.adafruit.com/product/1475),  [pHAT DAC](https://shop.pimoroni.de/products/phat-dac), and [HifiBerry DAC+](https://www.hifiberry.com/products/dacplus/))
 
 **Again: do not try to use the internal Bluetooth chip, this will only bring you many hours of frustration.**
